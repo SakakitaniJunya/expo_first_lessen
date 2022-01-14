@@ -24,7 +24,9 @@
     "react-native-screens": "~3.10.1",
     "react-native-web": "0.17.1",
     "react-redux": "^7.2.6",
-    "tailwind-rn": "^3.0.1"
+    "tailwind-rn": "^3.0.1",
+    "expo-font": "~10.0.4",
+    "@expo-google-fonts/oswald": "0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
