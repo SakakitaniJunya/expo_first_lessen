@@ -11,6 +11,7 @@ import {
     decrement,
     addByPayload,
     selectCount,
+    updatePayload
 } from '../slices/counterSlice';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ReduxTK'>;
@@ -56,7 +57,7 @@ const ReduxTKScreen: VFC<Props> = ({ navigation }) => {
                 value={amount}
                 onChangeText={(txt:string) => setAmount(txt)}
             />
-            <View style={tw('my-1')}>
+              <View style={tw('my-1')}>
                 <Button
                     title="increment by amount"
                     onPress={() => {
@@ -65,6 +66,24 @@ const ReduxTKScreen: VFC<Props> = ({ navigation }) => {
                     }}
                 />
             </View>
+
+            <Text>updateNum</Text>
+            <Input
+                placeholder="Update state"
+                leftIcon={<FontAwesome name="pencil" size={24} color="gray" />}
+                value={amount}
+                onChangeText={(txt:string) => setAmount(txt)}
+            />
+            <View style={tw('my-1')}>
+                <Button
+                    title="update state"
+                    onPress={() => {
+                        dispatch(updatePayload(incrementAmount));
+                        setAmount('0');
+                    }}
+                />
+            </View>
+
         </View>
 
     )

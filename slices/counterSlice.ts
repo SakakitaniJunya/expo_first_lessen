@@ -19,10 +19,13 @@ export const counterSlice = createSlice({
         addByPayload: (state, action: PayloadAction<number>) => {
             state.count = state.count + action.payload;
         },
+        updatePayload: (state, action: PayloadAction<number>) => {
+            state.count = action.payload;
+        }
     },
 });
 
-export const { increment, decrement, addByPayload } = counterSlice.actions;
+export const { increment, decrement, addByPayload , updatePayload} = counterSlice.actions;
 
 //stateを取得するためのメソッド作成　RootStateのデータ型を利用？
 export const selectCount = (state: RootState) => state.counter.count;
